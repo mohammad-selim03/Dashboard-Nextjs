@@ -1,4 +1,4 @@
-# NextJS Startup - User Management Dashboard
+# User Management Dashboard
 
 A modern, enterprise-grade user management dashboard built with Next.js 15, TypeScript, and TailwindCSS. This project demonstrates best practices for React development, component architecture, and modern web application patterns.
 
