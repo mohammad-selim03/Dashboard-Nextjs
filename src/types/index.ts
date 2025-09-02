@@ -35,4 +35,5 @@ export interface UseSearchReturn<T = unknown> {
   setSearchTerm: (term: string) => void;
   filteredData: T[];
   clearSearch: () => void;
+  debouncedSearchTerm: string;
 }

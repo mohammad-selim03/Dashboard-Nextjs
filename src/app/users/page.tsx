@@ -9,7 +9,7 @@ import { Pagination } from '@/components/ui/Pagination';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { ProfessionalBackground } from '@/components/layout/ProfessionalBackground';
 import { useUsers } from '@/hooks/userUsers';
-import { useSearch } from '@/hooks/useSearch';
+import { useOptimizedSearch } from '@/hooks/useOptimizedSearch';
 import { usePagination } from '@/hooks/usePagination';
 import { PAGINATION } from '@/utils/constants';
 
@@ -22,8 +22,15 @@ export default function UsersPage() {
   // Fetch users data
   const { users, loading, error, refetch } = useUsers();
   
-  // Search functionality
-  const { searchTerm, setSearchTerm, filteredUsers, clearSearch } = useSearch(users);
+  // Optimized search functionality with performance metrics
+  const { 
+    searchTerm, 
+    setSearchTerm, 
+    filteredUsers, 
+    clearSearch, 
+    searchStats, 
+    isSearching 
+  } = useOptimizedSearch(users);
   
   // Pagination functionality
   const pagination = usePagination({
@@ -109,6 +116,21 @@ export default function UsersPage() {
                     </span>
                   )}
                 </p>
+                {/* Search performance stats */}
+                {searchTerm && (
+                  <p className="text-xs text-gray-500 mt-1">
+                    {isSearching ? (
+                      <span className="text-yellow-400">Searching...</span>
+                    ) : (
+                      <span>
+                        Found in {searchStats.searchTime}ms
+                        {searchStats.cacheHit && (
+                          <span className="text-green-400 ml-1">(cached)</span>
+                        )}
+                      </span>
+                    )}
+                  </p>
+                )}
               </div>
             </div>
 
