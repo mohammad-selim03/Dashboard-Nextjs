@@ -20,7 +20,7 @@ A modern, enterprise-grade user management dashboard built with Next.js 15, Type
 - **Performance**: Optimized with caching, debouncing, and efficient rendering
 - **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15.5.2 (App Router)
 - **Language**: TypeScript 5+
