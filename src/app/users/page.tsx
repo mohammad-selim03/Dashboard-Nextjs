@@ -7,7 +7,7 @@ import { UserDetails } from '@/components/user/UserDetails';
 import { SearchInput } from '@/components/ui/SearchInput';
 import { Pagination } from '@/components/ui/Pagination';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
-import { ThreeBackground } from '@/components/layout/ThreeBackground';
+import { ProfessionalBackground } from '@/components/layout/ProfessionalBackground';
 import { useUsers } from '@/hooks/userUsers';
 import { useSearch } from '@/hooks/useSearch';
 import { usePagination } from '@/hooks/usePagination';
@@ -61,9 +61,9 @@ export default function UsersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 relative overflow-hidden">
-      {/* Animated background */}
-      <ThreeBackground />
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Professional background */}
+      <ProfessionalBackground />
       
       {/* Main content */}
       <div className="relative z-10">

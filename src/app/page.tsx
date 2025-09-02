@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Users, Search, Grid, Eye, Star, ArrowRight } from "lucide-react";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
-import { ThreeBackground } from "@/components/layout/ThreeBackground";
+import { ProfessionalBackground } from "@/components/layout/ProfessionalBackground";
 import { ANIMATION } from "@/utils/constants";
 
 export default function Home() {
@@ -44,17 +44,17 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 relative overflow-hidden">
-      {/* Animated 3D Background */}
-      <ThreeBackground />
-      
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Professional Background */}
+      <ProfessionalBackground />
+
       {/* Main Content */}
       <div className="relative z-10">
         {/* Hero Section */}
         <div className="container mx-auto px-4 py-16 text-center">
           <AnimatedCard delay={ANIMATION.CARD_DELAY} className="rounded-2xl p-12 mb-16">
             <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              NextJS Startup
+              User Dashboard Management
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               A modern user management dashboard showcasing best practices with Next.js, TypeScript, and TailwindCSS.
@@ -68,7 +68,7 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="https://github.com"
+                href="https://github.com/mohammad-selim03/Dashboard-Nextjs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50"
@@ -82,9 +82,9 @@ export default function Home() {
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {features.map((feature, index) => (
-              <AnimatedCard 
+              <AnimatedCard
                 key={feature.title}
-                delay={ANIMATION.CARD_DELAY * (index + 2)} 
+                delay={ANIMATION.CARD_DELAY * (index + 2)}
                 className="rounded-xl p-6 hover:scale-105 transition-transform duration-300"
               >
                 <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${feature.color} mb-4`}>
