@@ -26,7 +26,7 @@ export const getColorFromString = (str: string): string => {
 /**
  * Debounce function for search input
  */
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: never[]) => unknown>(
   func: T,
   delay: number
 ): ((...args: Parameters<T>) => void) => {

@@ -100,7 +100,7 @@ export default function Home() {
           <AnimatedCard delay={ANIMATION.CARD_DELAY * 6} className="rounded-xl p-8">
             <h2 className="text-3xl font-bold text-white mb-8">Technology Stack</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {technologies.map((tech, index) => (
+              {technologies.map((tech) => (
                 <div key={tech.name} className="text-center group">
                   <div className="p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:scale-105">
                     <h4 className="font-semibold text-white mb-1">{tech.name}</h4>

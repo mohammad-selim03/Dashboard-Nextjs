@@ -99,7 +99,7 @@ export default function UsersPage() {
                   <span className="font-semibold text-white">{filteredUsers.length}</span> users
                   {searchTerm && (
                     <span className="ml-2">
-                      for "<span className="text-purple-300">{searchTerm}</span>"
+                      for &ldquo;<span className="text-purple-300">{searchTerm}</span>&ldquo;
                       <button
                         onClick={clearSearch}
                         className="ml-2 text-purple-400 hover:text-purple-300 underline focus:outline-none"

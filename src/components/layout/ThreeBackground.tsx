@@ -14,7 +14,8 @@ export const ThreeBackground: React.FC = () => {
   const animationIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    const mountElement = mountRef.current;
+    if (!mountElement) return;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -34,7 +35,7 @@ export const ThreeBackground: React.FC = () => {
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     
-    mountRef.current.appendChild(renderer.domElement);
+    mountElement.appendChild(renderer.domElement);
     
     // Store references for cleanup
     sceneRef.current = scene;
@@ -186,8 +187,8 @@ export const ThreeBackground: React.FC = () => {
         cancelAnimationFrame(animationIdRef.current);
       }
       
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (mountElement && renderer.domElement) {
+        mountElement.removeChild(renderer.domElement);
       }
       
       // Dispose of Three.js objects

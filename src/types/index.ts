@@ -30,9 +30,9 @@ export interface UsePaginationReturn {
   hasPrevious: boolean;
 }
 
-export interface UseSearchReturn {
+export interface UseSearchReturn<T = unknown> {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  filteredData: any[];
+  filteredData: T[];
   clearSearch: () => void;
 }

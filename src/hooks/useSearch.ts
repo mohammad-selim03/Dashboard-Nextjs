@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { User } from '@/types';
+import { User, UseSearchReturn } from '@/types';
 import { filterUsers, debounce } from '@/utils/helpers'; 
 import { LOCAL_STORAGE_KEYS } from '@/utils/constants';
 import { useLocalStorage } from './useLocalStorage';
 
-interface UseSearchReturn {
+interface UserSearchReturn {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
   filteredUsers: User[];
@@ -17,7 +17,7 @@ interface UseSearchReturn {
 /**
  * Custom hook for search functionality with debouncing and local storage
  */
-export const useSearch = (users: User[]): UseSearchReturn => {
+export const useSearch = (users: User[]): UserSearchReturn => {
   const [storedSearchTerm, setStoredSearchTerm] = useLocalStorage(
     LOCAL_STORAGE_KEYS.SEARCH_TERM,
     ''

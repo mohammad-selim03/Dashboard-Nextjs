@@ -222,7 +222,7 @@ export const UserDetails: React.FC<UserDetailsProps> = ({ user, onBack }) => {
             
             <div className="p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-sm text-gray-400 font-medium mb-1">Slogan</p>
-              <p className="text-white font-semibold italic">"{user.company.catchPhrase}"</p>
+              <p className="text-white font-semibold italic">&ldquo;{user.company.catchPhrase}&ldquo;</p>
             </div>
             
             <div className="p-4 bg-white/5 rounded-lg border border-white/10">
