@@ -17,6 +17,8 @@ import { UserDetailsProps } from '@/types';
 import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import { getInitials, formatPhoneNumber } from '@/utils/helpers';
 import { ANIMATION } from '@/utils/constants';
+import { ImageProvider } from '@/assets';
+import Image from 'next/image';
 
 /**
  * Comprehensive user details component with enhanced information display
@@ -85,14 +87,18 @@ export const UserDetails: React.FC<UserDetailsProps> = ({ user, onBack }) => {
         <AnimatedCard delay={ANIMATION.CARD_DELAY} className="lg:col-span-1 rounded-xl p-6">
           <div className="text-center">
             {/* Avatar */}
-            <div className="relative mx-auto mb-6">
+            {/* <div className="relative mx-auto mb-6">
               <div className="w-32 h-32 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-4xl shadow-2xl mx-auto">
                 {getInitials(user.name)}
               </div>
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full border-4 border-white animate-pulse shadow-lg">
                 <div className="w-full h-full bg-green-400 rounded-full animate-ping opacity-75"></div>
               </div>
+            </div> */}
+            <div className='flex itmes-center justify-center'>
+              <Image src={ImageProvider?.defaultUser} alt='User Avatar' height={200} width={200} className='rounded-full object-cover' />
             </div>
+              
 
             {/* Basic Info */}
             <h2 className="text-2xl font-bold text-white mb-2">{user.name}</h2>
@@ -126,7 +132,7 @@ export const UserDetails: React.FC<UserDetailsProps> = ({ user, onBack }) => {
             <span>Contact Information</span>
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {renderCopyableField(
               <Mail className="w-5 h-5" />,
               'Email Address',
