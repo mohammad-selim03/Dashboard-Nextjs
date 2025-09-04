@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Initialize ScrollTrigger
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // Enable smooth scrolling
-  gsap.config({ 
-    scrollTrigger: {
-      autoRefreshEvents: 'resize,orientationchange,DOMContentLoaded'
-    }
-  });
-}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +29,6 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ scrollBehavior: 'auto' }} // Override default scroll behavior
       >
         {children}
       </body>
